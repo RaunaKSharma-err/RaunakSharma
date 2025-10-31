@@ -1,5 +1,6 @@
 import { twMerge } from "tailwind-merge";
 import React from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 
 export function OrbitingCircles({
   className,
@@ -13,6 +14,7 @@ export function OrbitingCircles({
   ...props
 }) {
   const calculatedDuration = duration / speed;
+
   return (
     <>
       {path && (
@@ -55,3 +57,15 @@ export function OrbitingCircles({
     </>
   );
 }
+
+// Prop validation for OrbitingCircles component
+OrbitingCircles.propTypes = {
+  className: PropTypes.string, // className should be a string (optional)
+  children: PropTypes.node.isRequired, // children is required and should be a React node
+  reverse: PropTypes.bool, // reverse should be a boolean (optional)
+  duration: PropTypes.number, // duration should be a number (optional)
+  radius: PropTypes.number, // radius should be a number (optional)
+  path: PropTypes.bool, // path should be a boolean (optional)
+  iconSize: PropTypes.number, // iconSize should be a number (optional)
+  speed: PropTypes.number, // speed should be a number (optional)
+};

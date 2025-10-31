@@ -1,5 +1,6 @@
 import { twMerge } from "tailwind-merge";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types"; // Import PropTypes for prop validation
 
 function MousePosition() {
   const [mousePosition, setMousePosition] = useState({
@@ -232,11 +233,9 @@ export const Particles = ({
       circle.x += circle.dx + vx;
       circle.y += circle.dy + vy;
       circle.translateX +=
-        (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) /
-        ease;
+        (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) / ease;
       circle.translateY +=
-        (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) /
-        ease;
+        (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) / ease;
 
       drawCircle(circle, true);
 
@@ -267,4 +266,17 @@ export const Particles = ({
       <canvas ref={canvasRef} className="size-full" />
     </div>
   );
+};
+
+// Prop validation for Particles component
+Particles.propTypes = {
+  className: PropTypes.string, // className should be a string (optional)
+  quantity: PropTypes.number, // quantity should be a number (optional)
+  staticity: PropTypes.number, // staticity should be a number (optional)
+  ease: PropTypes.number, // ease should be a number (optional)
+  size: PropTypes.number, // size should be a number (optional)
+  refresh: PropTypes.bool, // refresh should be a boolean (optional)
+  color: PropTypes.string, // color should be a string (optional)
+  vx: PropTypes.number, // vx should be a number (optional)
+  vy: PropTypes.number, // vy should be a number (optional)
 };

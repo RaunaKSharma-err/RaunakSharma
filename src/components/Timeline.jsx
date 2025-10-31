@@ -1,6 +1,7 @@
 "use client";
 import { useScroll, useTransform, motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types"; // Import PropTypes for validation
 
 export const Timeline = ({ data }) => {
   const ref = useRef(null);
@@ -73,3 +74,17 @@ export const Timeline = ({ data }) => {
     </div>
   );
 };
+
+// Add propTypes validation
+Timeline.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      date: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      job: PropTypes.string.isRequired,
+      contents: PropTypes.arrayOf(PropTypes.string).isRequired,
+    })
+  ).isRequired,
+};
+
+export default Timeline;

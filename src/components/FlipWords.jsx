@@ -1,7 +1,9 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
+import PropTypes from "prop-types"; // Import PropTypes
+
 export const FlipWords = ({ words, duration = 3000, className }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -51,7 +53,6 @@ export const FlipWords = ({ words, duration = 3000, className }) => {
         className={twMerge("z-10 inline-block relative text-left", className)}
         key={currentWord}
       >
-        {/* edit suggested by Sajal: https://x.com/DewanganSajal */}
         {currentWord.split(" ").map((word, wordIndex) => (
           <motion.span
             key={word + wordIndex}
@@ -84,3 +85,12 @@ export const FlipWords = ({ words, duration = 3000, className }) => {
     </AnimatePresence>
   );
 };
+
+// Prop validation with PropTypes
+FlipWords.propTypes = {
+  words: PropTypes.arrayOf(PropTypes.string).isRequired, // words should be an array of strings
+  duration: PropTypes.number, // duration should be a number (optional)
+  className: PropTypes.string, // className should be a string (optional)
+};
+
+export default FlipWords;

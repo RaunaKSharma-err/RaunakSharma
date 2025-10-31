@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import  { useState } from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 import ProjectDetails from "./ProjectDetails";
 
 const Project = ({
@@ -11,6 +12,7 @@ const Project = ({
   setPreview,
 }) => {
   const [isHidden, setIsHidden] = useState(false);
+
   return (
     <>
       <div
@@ -48,6 +50,22 @@ const Project = ({
       )}
     </>
   );
+};
+
+// Prop validation for Project component
+Project.propTypes = {
+  title: PropTypes.string.isRequired, // title should be a required string
+  description: PropTypes.string.isRequired, // description should be a required string
+  subDescription: PropTypes.string, // subDescription is optional and should be a string
+  href: PropTypes.string.isRequired, // href should be a required string
+  image: PropTypes.string.isRequired, // image should be a required string (URL)
+  tags: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired, // tag id should be a required string
+      name: PropTypes.string.isRequired, // tag name should be a required string
+    })
+  ).isRequired, // tags should be an array of objects with id and name
+  setPreview: PropTypes.func.isRequired, // setPreview should be a required function
 };
 
 export default Project;

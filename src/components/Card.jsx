@@ -1,4 +1,6 @@
 import { motion } from "motion/react";
+import PropTypes from "prop-types"; // Import PropTypes
+
 const Card = ({ style, text, image, containerRef }) => {
   return image && !text ? (
     <motion.img
@@ -22,6 +24,14 @@ const Card = ({ style, text, image, containerRef }) => {
       {text}
     </motion.div>
   );
+};
+
+// Add PropTypes validation
+Card.propTypes = {
+  style: PropTypes.object, // The style should be an object (for inline styles)
+  text: PropTypes.string, // The text prop should be a string
+  image: PropTypes.string, // The image prop should be a string (URL of the image)
+  containerRef: PropTypes.object, // The containerRef should be an object (ref object)
 };
 
 export default Card;

@@ -3,8 +3,8 @@
 import createGlobe from "cobe";
 import { useMotionValue, useSpring } from "motion/react";
 import { useEffect, useRef } from "react";
-
 import { twMerge } from "tailwind-merge";
+import PropTypes from "prop-types"; // Import PropTypes
 
 const MOVEMENT_DAMPING = 1400;
 
@@ -120,3 +120,11 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
     </div>
   );
 }
+
+// Prop validation for Globe component
+Globe.propTypes = {
+  className: PropTypes.string, // className should be a string (optional)
+  config: PropTypes.object, // config should be an object (optional)
+};
+
+export default Globe;

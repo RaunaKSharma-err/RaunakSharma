@@ -1,6 +1,8 @@
 import { twMerge } from "tailwind-merge";
 import Marquee from "../components/Marquee";
 import { reviews } from "../constants";
+import PropTypes from "prop-types";
+
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
@@ -52,3 +54,10 @@ export default function Testimonial() {
     </div>
   );
 }
+
+ReviewCard.propTypes = {
+  img: PropTypes.string.isRequired, // Ensure img is a string (URL of the image)
+  name: PropTypes.string.isRequired, // Ensure name is a string
+  username: PropTypes.string.isRequired, // Ensure username is a string
+  body: PropTypes.string.isRequired, // Ensure body is a string
+};

@@ -1,4 +1,6 @@
 import { twMerge } from "tailwind-merge";
+import PropTypes from "prop-types"; // Import PropTypes
+
 export default function Marquee({
   className,
   reverse = false,
@@ -38,3 +40,14 @@ export default function Marquee({
     </div>
   );
 }
+
+// Prop validation for Marquee component
+Marquee.propTypes = {
+  className: PropTypes.string, // className should be a string (optional)
+  reverse: PropTypes.bool, // reverse should be a boolean (optional)
+  pauseOnHover: PropTypes.bool, // pauseOnHover should be a boolean (optional)
+  children: PropTypes.node, // children should be any renderable React node
+  vertical: PropTypes.bool, // vertical should be a boolean (optional)
+  repeat: PropTypes.number, // repeat should be a number (optional)
+};
+

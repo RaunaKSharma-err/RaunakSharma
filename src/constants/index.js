@@ -30,12 +30,10 @@ export const myProjects = [
     id: 2,
     title: "AirWatch  (NASA SPACE APP CHALLANGE)",
     description:
-      "Facilitates purchases from international websites like Amazon and eBay, allowing customers to shop from these sites and have products delivered domestically.",
+      "It shows the real time AQI , Pollutants and weather measurements for different places",
     subDescription: [
-      "Built a scalable application with ASP.NET Core MVC, integrating global platforms like Amazon for domestic delivery.",
-      "Implemented secure authentication and database management using ASP.NET Core Identity and Entity Framework Core.",
+      "Our website helps you stay safe by giving you real-time air quality forecasts using data from NASA’s TEMPO mission, ground sensors, and weather services. We track harmful pollutants like ozone, nitrogen dioxide, and smoke, and let you know when the air near you is unhealthy — all in one easy-to-use web app.Our website helps you stay safe by giving you real-time air quality forecasts using data from NASA’s TEMPO mission, ground sensors, and weather services. We track harmful pollutants like ozone, nitrogen dioxide, and smoke, and let you know when the air near you is unhealthy — all in one easy-to-use web app.",
       "Designed a responsive frontend with Tailwind CSS, enhancing user experience.",
-      "Added payment systems, localization, and product filtering for functionality improvements.",
     ],
     href: "https://nasaspaceapp-frontend-t7bg.onrender.com/",
     logo: "",
@@ -74,10 +72,9 @@ export const myProjects = [
     description:
       "A modern, interactive software built with Python and Tkinter UI",
     subDescription: [
-      "Developed a fully interactive Single Page Application (SPA) using Blazor WebAssembly.",
-      "Implemented API interactions using .NET Core for a robust backend.",
-      "Designed responsive UI components with Tailwind CSS for an enhanced UX.",
-      "Integrated SQLite for efficient client-side database storage.",
+      "Developed a fully interactive RBS software using python and TKinter.",
+      "Implemented smart billing with email and printout functionality.",
+      "Designed responsive UI components with TKinter for an enhanced UX.",
     ],
     href: "",
     logo: "",
@@ -100,10 +97,10 @@ export const myProjects = [
     title: "Sajilo Salon",
     description: "A ReactNative Mobile Application.",
     subDescription: [
-      "Built a powerful rendering engine using OpenGL and C++.",
-      "Developed a physics engine with collision detection and particle effects.",
-      "Implemented a scripting system for easy game customization.",
-      "Optimized performance with multi-threading and efficient memory management.",
+      "Built a very user friendly saloon application for barbers to record their daily transactions",
+      "Implemented a cloud storage for secure database.",
+      "Implemented a Tailwindcss for customization.",
+      "Optimized performance with reactnative functionality.",
     ],
     href: "",
     logo: "",
@@ -153,14 +150,13 @@ export const myProjects = [
   },
   {
     id: 6,
-    title: "Brand Showup portfolio Website",
+    title: "Brand ShowOff portfolio Website",
     description:
       "A website that allows users to enroll in courses, watch video lectures, and take quizzes.",
     subDescription: [
-      "Built using Blazor WebAssembly for a seamless SPA experience.",
-      "Implemented video streaming with Azure Media Services.",
-      "Added a quiz system with dynamic question generation and real-time grading.",
-      "Integrated Stripe API for secure payment processing.",
+      "Built using Html , css and javascript with smooth user experience.",
+      "Implemented image showoff with javascript.",
+      "Added a buttons for next and previous slides.",
     ],
     href: "https://designer-slide.vercel.app/",
     logo: "",
@@ -184,10 +180,10 @@ export const myProjects = [
     description:
       "A webApp that allows women and girls to safely reach their destination.",
     subDescription: [
-      "Built using Blazor WebAssembly for a seamless SPA experience.",
-      "Implemented video streaming with Azure Media Services.",
-      "Added a quiz system with dynamic question generation and real-time grading.",
-      "Integrated Stripe API for secure payment processing.",
+      "Built using MERN stack for womens safe ride.",
+      "Implemented realtime path tracing Services.",
+      "Added real time notifications and cancel ride button",
+      "Future aspects is Integrating Stripe API for secure payment processing.",
     ],
     href: "",
     logo: "",
@@ -211,7 +207,7 @@ export const myProjects = [
       {
         id: 4,
         name: "Leaflet Map",
-        path: "/assets/logos/cloudinary.svg",
+        path: "/assets/logos/leaflet.png",
       },
       {
         id: 5,
@@ -226,12 +222,11 @@ export const myProjects = [
     description:
       "A website that allows peoples to connect with eachother and talk to them like discord.",
     subDescription: [
-      "Built using Blazor WebAssembly for a seamless SPA experience.",
-      "Implemented video streaming with Azure Media Services.",
-      "Added a quiz system with dynamic question generation and real-time grading.",
-      "Integrated Stripe API for secure payment processing.",
+      "Built using MERN stack for seamless user experience.",
+      "Implemented cloudinary for text and image transfer",
+      "Implemented a responsive user interface for best user experience.",
     ],
-    href: "",
+    href: "https://guff-chatapp-mern-stack.onrender.com/",
     logo: "",
     image: "/assets/projects/GUFF.jpg",
     tags: [
@@ -253,7 +248,7 @@ export const myProjects = [
       {
         id: 4,
         name: "WebSocket",
-        path: "/assets/logos/webSocket.svg",
+        path: "/assets/logos/websocket.png",
       },
       {
         id: 5,

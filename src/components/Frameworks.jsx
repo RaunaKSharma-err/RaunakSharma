@@ -1,4 +1,5 @@
 import { OrbitingCircles } from "./OrbitingCircles";
+import PropTypes from "prop-types"; // Import PropTypes
 
 export function Frameworks() {
   const skills = [
@@ -11,7 +12,6 @@ export function Frameworks() {
     "react",
     "sqlite",
     "tailwindcss",
-    "vitejs",
   ];
 
   const PngSkill = [
@@ -42,3 +42,10 @@ export function Frameworks() {
 const Icon = ({ src }) => (
   <img src={src} className="duration-200 rounded-sm hover:scale-110" />
 );
+
+// Prop validation for Icon component
+Icon.propTypes = {
+  src: PropTypes.string.isRequired, // src should be a string and is required
+};
+
+export default Frameworks;

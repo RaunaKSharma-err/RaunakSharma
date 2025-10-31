@@ -1,4 +1,6 @@
 import { motion } from "motion/react";
+import PropTypes from "prop-types"; // Import PropTypes
+
 const ProjectDetails = ({
   title,
   description,
@@ -26,7 +28,7 @@ const ProjectDetails = ({
           <h5 className="mb-2 text-2xl font-bold text-white">{title}</h5>
           <p className="mb-3 font-normal text-neutral-400">{description}</p>
           {subDescription.map((subDesc, index) => (
-            <p className="mb-3 font-normal text-neutral-400">{subDesc}</p>
+            <p key={index} className="mb-3 font-normal text-neutral-400">{subDesc}</p>
           ))}
           <div className="flex items-center justify-between mt-4">
             <div className="flex gap-3">
@@ -39,15 +41,35 @@ const ProjectDetails = ({
                 />
               ))}
             </div>
-            <a className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation">
+            <a
+              className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation"
+              href={href} // Added href here
+            >
               View Project{" "}
-              <img src="assets/arrow-up.svg" className="size-4" href={href} />
+              <img src="assets/arrow-up.svg" className="size-4" />
             </a>
           </div>
         </div>
       </motion.div>
     </div>
   );
+};
+
+// Prop validation for ProjectDetails component
+ProjectDetails.propTypes = {
+  title: PropTypes.string.isRequired, // title should be a required string
+  description: PropTypes.string.isRequired, // description should be a required string
+  subDescription: PropTypes.arrayOf(PropTypes.string).isRequired, // subDescription should be an array of strings
+  image: PropTypes.string.isRequired, // image should be a required string (URL)
+  tags: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired, // tag id should be a required string
+      path: PropTypes.string.isRequired, // tag path (image URL) should be a required string
+      name: PropTypes.string.isRequired, // tag name should be a required string
+    })
+  ).isRequired, // tags should be an array of objects with id, path, and name
+  href: PropTypes.string.isRequired, // href should be a required string (URL)
+  closeModal: PropTypes.func.isRequired, // closeModal should be a required function
 };
 
 export default ProjectDetails;
